@@ -1,0 +1,32 @@
+:root {
+    ---p-scrollBar: 144, 144, 144, 0.3;
+    ---p-scrollBar-hover: 168, 167, 167;
+}
+
+* {
+    scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: transparent;
+}
+
+.scrollbar-hidden::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: rgba(var(---p-scrollBar));
+    border-radius: 70px;
+}
+
+*:hover::-webkit-scrollbar-thumb {
+    background: rgba(var(---p-scrollBar-hover));
+    border-radius: 70px;
+}
