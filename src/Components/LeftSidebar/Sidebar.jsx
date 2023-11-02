@@ -7,6 +7,7 @@ import wallet from '../../assets/wallet.svg'
 import favorite from '../../assets/favorite.svg'
 import profile from '../../assets/profile.svg'
 import setting from '../../assets/setting.svg'
+import logout from '../../assets/logout.svg'
 
 const Sidebar = () => {
   const sidebar = [
@@ -55,15 +56,21 @@ const Sidebar = () => {
   ]
 
   return (
-    <div className='bg-white rounded-lg py-8 text-zinc-400 flex flex-col gap-5'>
-      {
-        sidebar.map((item) => (
-          <div key={item.id} className={`flex gap-5 items-center px-5 py-1 ${item.border && item.border}`}>
-            <span><img src={item.icon} /></span>
-            <h4 className={`${item.fontColor && item.fontColor} font-semibold`}>{item.text}</h4>
-          </div>
-        ))
-      }
+    <div className='bg-white rounded-lg py-8 text-zinc-400 flex flex-col justify-between h-full'>
+      <div className='flex flex-col gap-5'>
+        {
+          sidebar.map((item) => (
+            <div key={item.id} className={`flex gap-5 items-center px-5 py-1 ${item.border && item.border}`}>
+              <span><img src={item.icon} /></span>
+              <h4 className={`${item.fontColor && item.fontColor} font-semibold`}>{item.text}</h4>
+            </div>
+          ))
+        }
+      </div>
+      <div className='flex gap-3 items-center px-5 cursor-pointer'>
+        <img src={logout} alt='logout icon' />
+        <span className='text-[#88c2bb]'>Logout</span>
+      </div>
     </div>
   )
 }
